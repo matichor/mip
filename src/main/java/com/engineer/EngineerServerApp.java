@@ -14,13 +14,13 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 //@EnableJpaRepositories
 //@EntityScan("com.engineer")
 
-public class EngineerServerApp extends SpringBootServletInitializer {
+public class EngineerServerApp  {
         public static void main(String[] args) {
             SpringApplication.run(EngineerServerApp.class, args);
         }
 
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-        return builder.sources(EngineerServerApp.class);
-    }
+//    @Override
+//    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+//        return builder.sources(EngineerServerApp.class);
+//    }
 }
