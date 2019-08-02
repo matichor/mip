@@ -3088,7 +3088,7 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 var environment = {
     production: false,
-    serverUrl: 'http://localhost:8080' //'http://localhost:8080/engineers' //'http://localhost:8080' //https://fast-mountain-55835.herokuapp.com
+    serverUrl: 'https://mip-team.herokuapp.com' //'http://localhost:8080/engineers' //'http://localhost:8080' //https://fast-mountain-55835.herokuapp.com
 };
 /*
  * For easier debugging in development mode, you can import the following file
