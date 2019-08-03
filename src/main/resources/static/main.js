@@ -90,18 +90,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+
 
 
 var AppComponent = /** @class */ (function () {
-    function AppComponent() {
-        this.title = 'web';
+    function AppComponent(meta, titleService) {
+        this.meta = meta;
+        this.titleService = titleService;
+        meta.addTags([
+            { name: 'description', content: 'Biegi bieg bieganie kielce Mechanik i przyjaciele' },
+            { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+            { name: 'robots', content: 'INDEX, FOLLOW' },
+            { name: 'author', content: 'overclocker' },
+            { name: 'keywords', content: 'TypeScript, Angular' },
+            { name: 'date', content: '2019-08-03', scheme: 'YYYY-MM-DD' },
+            { httpEquiv: 'Content-Type', content: 'text/html' },
+            { property: 'og:title', content: 'Mechanik i Przyjaciele' },
+            { property: 'og:type', content: 'website' },
+            { charset: 'UTF-8' }
+        ]);
+        titleService.setTitle('Grupa biegowa Mechanik i Przyjaciele');
     }
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.scss */ "./src/app/app.component.scss")]
-        })
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["Meta"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["Title"]])
     ], AppComponent);
     return AppComponent;
 }());
