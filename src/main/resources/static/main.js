@@ -838,7 +838,7 @@ var News = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\" [style.width.%]=\"90\">\r\n    <div class=\"row w-100 mt-4\" *ngIf=\"isAuthenticated()\">\r\n        <div class=\"header-panel w-100 pr-4 pb-5\">\r\n            <app-modal-news (notifyCollectedData)=\"persistNews($event)\"></app-modal-news>\r\n        </div>\r\n    </div>\r\n    <div class=\"row ml-2 mr-2\" [style.width.%]=\"90\">\r\n        <perfect-scrollbar fxFlex=\"auto\">\r\n            <ng-container *ngFor=\"let item of news; let itemIdx = index;trackBy: trackByFn\">\r\n                <div class=\"row ml-2 mb-2\" *ngIf=\"isAuthenticated()\">\r\n                    <button class=\"btn btn-danger\" (click)=\"removeNews(item.id)\">Usuń</button>\r\n                </div>\r\n                <app-post [news]=\"item\"></app-post>\r\n            </ng-container>\r\n        </perfect-scrollbar>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"container-fluid\" [style.width.%]=\"90\">\r\n    <div class=\"row w-100 mt-4\" *ngIf=\"isAuthenticated()\">\r\n        <div class=\"header-panel w-100 pr-4 pb-5\">\r\n            <app-modal-news (notifyCollectedData)=\"persistNews($event)\"></app-modal-news>\r\n        </div>\r\n    </div>\r\n    <div class=\"row ml-2 mr-2 base-grid-news\" [style.width.%]=\"90\">\r\n        <perfect-scrollbar fxFlex=\"auto\">\r\n            <ng-container *ngFor=\"let item of news; let itemIdx = index;trackBy: trackByFn\">\r\n                <div class=\"row ml-2 mb-2\" *ngIf=\"isAuthenticated()\">\r\n                    <button class=\"btn btn-danger\" (click)=\"removeNews(item.id)\">Usuń</button>\r\n                </div>\r\n                <app-post [news]=\"item\"></app-post>\r\n            </ng-container>\r\n        </perfect-scrollbar>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -849,7 +849,7 @@ module.exports = "<div class=\"container-fluid\" [style.width.%]=\"90\">\r\n    
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21haW4vcGFnZXMvbmV3cy9uZXdzLmNvbXBvbmVudC5zY3NzIn0= */"
+module.exports = ".base-grid-news {\n  width: 95vh;\n  height: 95vh; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbWFpbi9wYWdlcy9uZXdzL0M6XFxVc2Vyc1xcTWF0ZXVzelxcRG9jdW1lbnRzXFxlbmdpbmVlcmZlbGxhc1xcZW5naW5lZXItdWlcXHdlYi9zcmNcXGFwcFxcbWFpblxccGFnZXNcXG5ld3NcXG5ld3MuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxZQUFXO0VBQ1gsYUFBWSxFQUNmIiwiZmlsZSI6InNyYy9hcHAvbWFpbi9wYWdlcy9uZXdzL25ld3MuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYmFzZS1ncmlkLW5ld3Mge1xyXG4gICAgd2lkdGg6IDk1dmg7XHJcbiAgICBoZWlnaHQ6IDk1dmg7XHJcbn0iXX0= */"
 
 /***/ }),
 
@@ -1111,7 +1111,7 @@ var AppGridRunnerRowComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row mt-4 ml-5\">\r\n    <perfect-scrollbar fxFlex=\"auto\">\r\n        <ng-container *ngFor=\"let runner of runners; let itemIdx = index;trackBy: trackByFn\">\r\n            <app-grid-row [runner]=\"runner\"></app-grid-row>\r\n        </ng-container>\r\n    </perfect-scrollbar>\r\n</div>"
+module.exports = "<div class=\"row mt-4 ml-5 base-grid\">\r\n    <perfect-scrollbar fxFlex=\"auto\">\r\n        <ng-container *ngFor=\"let runner of runners; let itemIdx = index;trackBy: trackByFn\">\r\n            <app-grid-row [runner]=\"runner\"></app-grid-row>\r\n        </ng-container>\r\n    </perfect-scrollbar>\r\n</div>"
 
 /***/ }),
 
@@ -1122,7 +1122,7 @@ module.exports = "<div class=\"row mt-4 ml-5\">\r\n    <perfect-scrollbar fxFlex
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".tabHeaderInfo {\n  margin-top: 20px;\n  height: 250px;\n  width: 100%; }\n  .tabHeaderInfo .col {\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-align: center;\n            align-items: center;\n    margin-left: 40%; }\n  .tabHeaderInfo .col span {\n      font-weight: bold; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbWFpbi9wYWdlcy9ydW5uZXJzL2dyaWQtcnVubmVyL0M6XFxVc2Vyc1xcTWF0ZXVzelxcRG9jdW1lbnRzXFxlbmdpbmVlcmZlbGxhc1xcZW5naW5lZXItdWlcXHdlYi9zcmNcXGFwcFxcbWFpblxccGFnZXNcXHJ1bm5lcnNcXGdyaWQtcnVubmVyXFxncmlkLXJ1bm5lci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNDLGlCQUFlO0VBQ2YsY0FBYTtFQUNiLFlBQVcsRUFTWDtFQVpEO0lBS1EscUJBQWE7SUFBYixjQUFhO0lBQ2IsMEJBQW1CO1lBQW5CLG9CQUFtQjtJQUNuQixpQkFBZ0IsRUFJbkI7RUFYTDtNQVNnQixrQkFBaUIsRUFDcEIiLCJmaWxlIjoic3JjL2FwcC9tYWluL3BhZ2VzL3J1bm5lcnMvZ3JpZC1ydW5uZXIvZ3JpZC1ydW5uZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudGFiSGVhZGVySW5mbyB7XHJcblx0bWFyZ2luLXRvcDoyMHB4O1xyXG5cdGhlaWdodDogMjUwcHg7XHJcblx0d2lkdGg6IDEwMCU7ICAgIFxyXG4gICAgLmNvbCB7XHJcbiAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAgICAgIG1hcmdpbi1sZWZ0OiA0MCU7XHJcbiAgICAgICAgICAgIHNwYW4ge1xyXG4gICAgICAgICAgICAgICAgZm9udC13ZWlnaHQ6IGJvbGQ7IFxyXG4gICAgICAgICAgICB9XHJcbiAgICB9XHJcbn0iXX0= */"
+module.exports = ".base-grid {\n  width: 95%;\n  height: 95vh; }\n\n.tabHeaderInfo {\n  margin-top: 20px;\n  height: 250px;\n  width: 100%; }\n\n.tabHeaderInfo .col {\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-align: center;\n            align-items: center;\n    margin-left: 40%; }\n\n.tabHeaderInfo .col span {\n      font-weight: bold; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbWFpbi9wYWdlcy9ydW5uZXJzL2dyaWQtcnVubmVyL0M6XFxVc2Vyc1xcTWF0ZXVzelxcRG9jdW1lbnRzXFxlbmdpbmVlcmZlbGxhc1xcZW5naW5lZXItdWlcXHdlYi9zcmNcXGFwcFxcbWFpblxccGFnZXNcXHJ1bm5lcnNcXGdyaWQtcnVubmVyXFxncmlkLXJ1bm5lci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFdBQVU7RUFDVixhQUFZLEVBQ2Y7O0FBQ0Q7RUFDQyxpQkFBZTtFQUNmLGNBQWE7RUFDYixZQUFXLEVBU1g7O0FBWkQ7SUFLUSxxQkFBYTtJQUFiLGNBQWE7SUFDYiwwQkFBbUI7WUFBbkIsb0JBQW1CO0lBQ25CLGlCQUFnQixFQUluQjs7QUFYTDtNQVNnQixrQkFBaUIsRUFDcEIiLCJmaWxlIjoic3JjL2FwcC9tYWluL3BhZ2VzL3J1bm5lcnMvZ3JpZC1ydW5uZXIvZ3JpZC1ydW5uZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYmFzZS1ncmlkIHtcclxuICAgIHdpZHRoOiA5NSU7XHJcbiAgICBoZWlnaHQ6IDk1dmg7XHJcbn1cclxuLnRhYkhlYWRlckluZm8ge1xyXG5cdG1hcmdpbi10b3A6MjBweDtcclxuXHRoZWlnaHQ6IDI1MHB4O1xyXG5cdHdpZHRoOiAxMDAlOyAgICBcclxuICAgIC5jb2wge1xyXG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAgICAgICBtYXJnaW4tbGVmdDogNDAlO1xyXG4gICAgICAgICAgICBzcGFuIHtcclxuICAgICAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiBib2xkOyBcclxuICAgICAgICAgICAgfVxyXG4gICAgfVxyXG59Il19 */"
 
 /***/ }),
 
@@ -1316,7 +1316,7 @@ var RunnerService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\" [style.width.%]=\"90\">\r\n    <div class=\"row w-100 mt-4\" *ngIf=\"isAuthenticated()\">\r\n        <div class=\"header-panel w-100 pr-4\">\r\n            <app-modal-runner (notifyCollectedData)=\"getRunnerDataFromModal($event)\"></app-modal-runner>\r\n        </div>\r\n    </div>\r\n    <!-- <app-runner-header></app-runner-header> -->\r\n    <app-grid-runner [runners]=\"runners\"></app-grid-runner>\r\n</div>"
+module.exports = "<div class=\"container-fluid\">\r\n    <div class=\"row w-100 mt-4\" *ngIf=\"isAuthenticated()\">\r\n        <div class=\"header-panel w-100 pr-4\">\r\n            <app-modal-runner (notifyCollectedData)=\"getRunnerDataFromModal($event)\"></app-modal-runner>\r\n        </div>\r\n    </div>\r\n    <!-- <app-runner-header></app-runner-header> -->\r\n    <app-grid-runner [runners]=\"runners\"></app-grid-runner>\r\n</div>"
 
 /***/ }),
 
@@ -1634,7 +1634,7 @@ var CalendarEventService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"nav-fixed-header navbar navbar-expand-lg navbar-dark pr-4 pt-2\">\r\n    <app-login-switch></app-login-switch>\r\n    <div class=\"w-100\">\r\n        <p>{{drawnQuote}}</p>\r\n    </div>\r\n</nav>"
+module.exports = "<nav class=\"nav-fixed-header navbar navbar-expand-lg navbar-dark pr-4 pt-2\">\r\n    <app-login-switch></app-login-switch>\r\n    <div class=\"w-100\">\r\n        <p *ngIf=\"quoteVisibility\">{{drawnQuote}}</p>\r\n    </div>\r\n</nav>"
 
 /***/ }),
 
@@ -1666,6 +1666,7 @@ __webpack_require__.r(__webpack_exports__);
 var AppHeaderComponent = /** @class */ (function () {
     function AppHeaderComponent() {
         var _this = this;
+        this.quoteVisibility = true;
         this.quotes = ['"Porażka jest po prostu szansą, żeby spróbować jeszcze raz, tym razem bardziej inteligentnie" - Henry Ford',
             '"Zamartwiając się tym, jak wypadniesz, już na starcie przegrywasz. Po prostu solidnie trenuj i daj z siebie wszystko" - Usain Bolt',
             '"Motywacja jest tym, co pozwala ci zacząć. Nawyk jest tym, co pozwala ci wytrwać" - Jim Ryun',
@@ -1681,6 +1682,9 @@ var AppHeaderComponent = /** @class */ (function () {
         };
     }
     AppHeaderComponent.prototype.ngOnInit = function () {
+        if (window.screen.width < 1341) {
+            this.quoteVisibility = false;
+        }
         this.drawtheQuote();
     };
     AppHeaderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -2290,7 +2294,7 @@ var MenuComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row pl-4 pt-4 pr-4\">\r\n    <form id=\"form\" #f=\"ngForm\" (ngSubmit)=\"takeMyBreath()\" novalidate>\r\n        <div class=\"row content-wraper\" ngModelGroup=\"baseSection\" #baseSection=\"ngModelGroup\">\r\n            <div class=\"col-md-12 form-group\">\r\n                <label for=\"exampleInputName\">Temat</label>\r\n                <input type=\"text\" class=\"form-control\" id=\"exampleInputName\" placeholder=\"\" [(ngModel)]=\"news.subject\"\r\n                    name=\"subject\" #name=\"ngModel\" required>\r\n            </div>\r\n            <div class=\"col-md-12 form-group\">\r\n                <label for=\"category\">Kategoria</label>\r\n                <textarea class=\"form-control\" id=\"contents\" rows=\"5\" cols=\"33\" [(ngModel)]=\"news.contents\" #category=\"ngModel\"\r\n                    name=\"contents\" required></textarea>\r\n            </div>\r\n            <div class=\"col-md-12 form-group\">\r\n                <label for=\"imgInput\">Wybierz zdjęcie: </label>\r\n                <input type=\"file\" id=\"imgInput\" class=\"form-control\" name=\"imgInput\" (change)=\"fileChange($event)\">\r\n            </div>\r\n            <div class=\"col-md-12 mb-5\" [style.margin-left.px]=\"30\">\r\n                <button type=\"submit\" class=\"btn btn-primary\" [style.width.px]=\"100\">Zapisz</button>\r\n            </div>\r\n        </div>\r\n    </form>\r\n</div>"
+module.exports = "<div class=\"row pl-4 pt-4 pr-4\">\r\n    <form id=\"form\" #f=\"ngForm\" (ngSubmit)=\"takeMyBreath()\" novalidate>\r\n        <div class=\"row content-wraper\" ngModelGroup=\"baseSection\" #baseSection=\"ngModelGroup\">\r\n            <div class=\"col-md-12 form-group\">\r\n                <label for=\"exampleInputName\">Temat</label>\r\n                <input type=\"text\" class=\"form-control\" id=\"exampleInputName\" placeholder=\"\" [(ngModel)]=\"news.subject\"\r\n                    name=\"subject\" #name=\"ngModel\" required>\r\n            </div>\r\n            <div class=\"col-md-12 form-group\">\r\n                <label for=\"category\">Treść</label>\r\n                <textarea class=\"form-control\" id=\"contents\" rows=\"5\" cols=\"33\" [(ngModel)]=\"news.contents\" #category=\"ngModel\"\r\n                    name=\"contents\" required></textarea>\r\n            </div>\r\n            <div class=\"col-md-12 form-group\">\r\n                <label for=\"imgInput\">Wybierz zdjęcie: </label>\r\n                <input type=\"file\" id=\"imgInput\" class=\"form-control\" name=\"imgInput\" (change)=\"fileChange($event)\">\r\n            </div>\r\n            <div class=\"col-md-12 mb-5\" [style.margin-left.px]=\"30\">\r\n                <button type=\"submit\" class=\"btn btn-primary\" [style.width.px]=\"100\">Zapisz</button>\r\n            </div>\r\n        </div>\r\n    </form>\r\n</div>"
 
 /***/ }),
 
@@ -2753,7 +2757,7 @@ var AppModalStatisticComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<article class=\"entry-block mt-2 w-100\">\r\n    <header>\r\n        <h2>{{news.subject}}</h2>\r\n        <div class=\"entry-meta\">{{news.created}}</div>\r\n    </header>\r\n    <div class=\"row mb-5\">\r\n        <div class=\"col-4\">\r\n            <app-image-panel [path]=\"path\" [width]='100' [height]='100' [binaryData]=\"news.teammatePicture\"></app-image-panel>\r\n        </div>\r\n        <div class=\"col-8\" [style.padding-left.px]=\"50\">\r\n            <span>{{news.contents}}</span>\r\n        </div>\r\n    </div>\r\n</article>\r\n<hr>"
+module.exports = "<article class=\"entry-block mt-2 w-100\">\r\n    <header>\r\n        <h2>{{news.subject}}</h2>\r\n        <div class=\"entry-meta\">\r\n            <fa-icon [icon]=\"['fas', 'calendar-alt']\" size=\"lg\" class=\"common-fontawesome-icon-color\"></fa-icon>\r\n            <span>{{news.created}}</span>\r\n        </div>\r\n    </header>\r\n    <div class=\"row mb-5\">\r\n        <div class=\"col-4\">\r\n            <app-image-panel [path]=\"path\" [width]='100' [height]='100' [binaryData]=\"news.teammatePicture\"></app-image-panel>\r\n        </div>\r\n        <div class=\"col-8\" [style.padding-left.px]=\"50\">\r\n            <span>{{news.contents}}</span>\r\n        </div>\r\n    </div>\r\n</article>\r\n<hr>"
 
 /***/ }),
 
@@ -2764,7 +2768,7 @@ module.exports = "<article class=\"entry-block mt-2 w-100\">\r\n    <header>\r\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".entry-block {\n  width: 70vw; }\n  .entry-block p {\n    font: 15px/30px Verdana; }\n  .entry-block span {\n    font-family: sans-serif;\n    font-size: 1rem;\n    width: 100px;\n    word-wrap: break-word; }\n  .entry-meta {\n  margin-bottom: 10px;\n  border-top: 1px solid #f2f2f3;\n  border-bottom: 1px solid #f2f2f3;\n  padding: 5px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2hhcmVkL3Bvc3QtYmxvY2svQzpcXFVzZXJzXFxNYXRldXN6XFxEb2N1bWVudHNcXGVuZ2luZWVyZmVsbGFzXFxlbmdpbmVlci11aVxcd2ViL3NyY1xcYXBwXFxzaGFyZWRcXHBvc3QtYmxvY2tcXHBvc3QtYmxvY2suY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxZQUFVLEVBV2I7RUFaRDtJQUdRLHdCQUF1QixFQUMxQjtFQUpMO0lBT1Esd0JBQXVCO0lBQ3ZCLGdCQUFlO0lBQ2YsYUFBVztJQUNYLHNCQUFvQixFQUN2QjtFQUdMO0VBQ0ksb0JBQW1CO0VBQ25CLDhCQUE2QjtFQUM3QixpQ0FBZ0M7RUFDaEMsYUFBWSxFQUVmIiwiZmlsZSI6InNyYy9hcHAvc2hhcmVkL3Bvc3QtYmxvY2svcG9zdC1ibG9jay5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5lbnRyeS1ibG9jayB7XHJcbiAgICB3aWR0aDo3MHZ3O1xyXG4gICAgcCB7XHJcbiAgICAgICAgZm9udDogMTVweC8zMHB4IFZlcmRhbmE7XHJcbiAgICB9XHJcblxyXG4gICAgc3BhbiB7XHJcbiAgICAgICAgZm9udC1mYW1pbHk6IHNhbnMtc2VyaWY7XHJcbiAgICAgICAgZm9udC1zaXplOiAxcmVtO1xyXG4gICAgICAgIHdpZHRoOjEwMHB4O1xyXG4gICAgICAgIHdvcmQtd3JhcDpicmVhay13b3JkO1xyXG4gICAgfVxyXG59XHJcblxyXG4uZW50cnktbWV0YSB7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAxMHB4O1xyXG4gICAgYm9yZGVyLXRvcDogMXB4IHNvbGlkICNmMmYyZjM7XHJcbiAgICBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2YyZjJmMztcclxuICAgIHBhZGRpbmc6IDVweDtcclxuXHJcbn0iXX0= */"
+module.exports = ".entry-block {\n  width: 70vw; }\n  .entry-block p {\n    font: 15px/30px Verdana; }\n  .entry-block span {\n    font-family: sans-serif;\n    font-size: 1rem;\n    width: 100px;\n    word-wrap: break-word; }\n  .entry-meta {\n  margin-bottom: 10px;\n  border-top: 1px solid #f2f2f3;\n  border-bottom: 1px solid #f2f2f3;\n  padding: 5px; }\n  .entry-meta span {\n    font: 12px Verdana;\n    margin-left: 10px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2hhcmVkL3Bvc3QtYmxvY2svQzpcXFVzZXJzXFxNYXRldXN6XFxEb2N1bWVudHNcXGVuZ2luZWVyZmVsbGFzXFxlbmdpbmVlci11aVxcd2ViL3NyY1xcYXBwXFxzaGFyZWRcXHBvc3QtYmxvY2tcXHBvc3QtYmxvY2suY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxZQUFVLEVBV2I7RUFaRDtJQUdRLHdCQUF1QixFQUMxQjtFQUpMO0lBT1Esd0JBQXVCO0lBQ3ZCLGdCQUFlO0lBQ2YsYUFBVztJQUNYLHNCQUFvQixFQUN2QjtFQUdMO0VBQ0ksb0JBQW1CO0VBQ25CLDhCQUE2QjtFQUM3QixpQ0FBZ0M7RUFDaEMsYUFBWSxFQU1mO0VBVkQ7SUFPUSxtQkFBa0I7SUFDbEIsa0JBQWlCLEVBQ3BCIiwiZmlsZSI6InNyYy9hcHAvc2hhcmVkL3Bvc3QtYmxvY2svcG9zdC1ibG9jay5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5lbnRyeS1ibG9jayB7XHJcbiAgICB3aWR0aDo3MHZ3O1xyXG4gICAgcCB7XHJcbiAgICAgICAgZm9udDogMTVweC8zMHB4IFZlcmRhbmE7XHJcbiAgICB9XHJcblxyXG4gICAgc3BhbiB7XHJcbiAgICAgICAgZm9udC1mYW1pbHk6IHNhbnMtc2VyaWY7XHJcbiAgICAgICAgZm9udC1zaXplOiAxcmVtO1xyXG4gICAgICAgIHdpZHRoOjEwMHB4O1xyXG4gICAgICAgIHdvcmQtd3JhcDpicmVhay13b3JkO1xyXG4gICAgfVxyXG59XHJcblxyXG4uZW50cnktbWV0YSB7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAxMHB4O1xyXG4gICAgYm9yZGVyLXRvcDogMXB4IHNvbGlkICNmMmYyZjM7XHJcbiAgICBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2YyZjJmMztcclxuICAgIHBhZGRpbmc6IDVweDtcclxuXHJcbiAgICBzcGFuIHtcclxuICAgICAgICBmb250OiAxMnB4IFZlcmRhbmE7XHJcbiAgICAgICAgbWFyZ2luLWxlZnQ6IDEwcHg7XHJcbiAgICB9XHJcbn0iXX0= */"
 
 /***/ }),
 
@@ -3090,6 +3094,7 @@ var environment = {
     production: false,
     serverUrl: 'https://mip-team.herokuapp.com' //'http://localhost:8080/engineers' //'http://localhost:8080' //https://fast-mountain-55835.herokuapp.com
 };
+//'https://mip-team.herokuapp.com'
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
