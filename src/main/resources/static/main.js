@@ -936,7 +936,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _gallery_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./gallery.service */ "./src/app/main/pages/gallery/gallery.service.ts");
-/* harmony import */ var src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/environments/environment.prod */ "./src/environments/environment.prod.ts");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
 /* harmony import */ var _runners_grid_exchange_data_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../runners/grid-exchange-data.service */ "./src/app/main/pages/runners/grid-exchange-data.service.ts");
 /* harmony import */ var src_app_core_permission_manager_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/core/permission-manager.service */ "./src/app/core/permission-manager.service.ts");
 
@@ -950,8 +950,8 @@ var GalleryViewComponent = /** @class */ (function () {
         var _this = this;
         this.galleryService = galleryService;
         this.permissionManagerService = permissionManagerService;
-        this.baseUrl = src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_3__["environment"].serverUrl + "/api";
-        this.persitUrl = src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_3__["environment"].serverUrl + "/api/addimggalery";
+        this.baseUrl = src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].serverUrl + "/api";
+        this.persitUrl = src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].serverUrl + "/api/addimggalery";
         this.galleryData = [];
         this.refreshData = function () {
             var url = _this.baseUrl + "/gallery";
@@ -3447,24 +3447,6 @@ var TestComponent = /** @class */ (function () {
     return TestComponent;
 }());
 
-
-
-/***/ }),
-
-/***/ "./src/environments/environment.prod.ts":
-/*!**********************************************!*\
-  !*** ./src/environments/environment.prod.ts ***!
-  \**********************************************/
-/*! exports provided: environment */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
-var environment = {
-    production: true,
-    serverUrl: 'http://localhost:8080'
-};
 
 
 /***/ }),
