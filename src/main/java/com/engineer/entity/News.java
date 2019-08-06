@@ -38,7 +38,7 @@ public class News {
     @PrePersist
     public void onCreate() {
     created = new java.sql.Date(LocalDateTime.now().atZone(ZoneId.systemDefault()).toInstant()
-                .toEpochMilli());
+                    .toEpochMilli());
     }
 
 }

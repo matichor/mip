@@ -11,7 +11,8 @@ public class SecurityConstants {
         return new String[]{
                 "/api/getevents",
                 "/api/news",
-                "/api/runners"
+                "/api/runners",
+                "/api/gallery"
         };
     }
 
@@ -19,7 +20,8 @@ public class SecurityConstants {
         return new String[]{
                 "/api/addevent",
                 "/api/runner",
-                "/api/addnews"
+                "/api/addnews",
+                "/api/addimggalery"
         };
     }
 
@@ -27,7 +29,8 @@ public class SecurityConstants {
         return new String[]{
                 "/api/deleteevent",
                 "/api/deletenews",
-                "/api/deleterunner"
+                "/api/deleterunner",
+                "/api/deleteimage"
 
         };
     }
