@@ -1155,6 +1155,9 @@ var AppNewsComponent = /** @class */ (function () {
     AppNewsComponent.prototype.ngOnInit = function () {
         this.refreshData();
     };
+    AppNewsComponent.prototype.ngOnDestroy = function () {
+        this.ngxSpinnerService.hide();
+    };
     AppNewsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-news',
@@ -1643,6 +1646,9 @@ var AppRunnersComponent = /** @class */ (function () {
         this.gridExchangeDataService.dataSource.subscribe(function (date) {
             _this.refreshData();
         });
+    };
+    AppRunnersComponent.prototype.ngOnDestroy = function () {
+        this.ngxSpinnerService.hide();
     };
     AppRunnersComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
