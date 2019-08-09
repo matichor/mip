@@ -519,6 +519,9 @@ var MainComponent = /** @class */ (function () {
     MainComponent.prototype.ngOnInit = function () {
         this.desktopVisibility = !(window.screen.width < 961);
         this.mobileVisibility = window.screen.width < 961;
+        if (this.mobileVisibility) {
+            alert('Aplikacja nie obsługuje jeszcze urządzeń mobilnych');
+        }
     };
     MainComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -561,6 +564,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_gallery_gallery_view_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./pages/gallery/gallery-view.component */ "./src/app/main/pages/gallery/gallery-view.component.ts");
 /* harmony import */ var _pages_cooperation_cooperation_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pages/cooperation/cooperation.component */ "./src/app/main/pages/cooperation/cooperation.component.ts");
 /* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var ng2_search_filter__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ng2-search-filter */ "./node_modules/ng2-search-filter/ng2-search-filter.es5.js");
+
+
 
 
 
@@ -586,7 +593,13 @@ var MainModule = /** @class */ (function () {
     }
     MainModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            imports: [_shared_shared_module__WEBPACK_IMPORTED_MODULE_2__["SharedModule"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"], _main_routing__WEBPACK_IMPORTED_MODULE_5__["MainRoutingModule"], ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_10__["PerfectScrollbarModule"], ngx_spinner__WEBPACK_IMPORTED_MODULE_16__["NgxSpinnerModule"]],
+            imports: [_shared_shared_module__WEBPACK_IMPORTED_MODULE_2__["SharedModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"],
+                _main_routing__WEBPACK_IMPORTED_MODULE_5__["MainRoutingModule"],
+                ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_10__["PerfectScrollbarModule"],
+                ngx_spinner__WEBPACK_IMPORTED_MODULE_16__["NgxSpinnerModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_17__["FormsModule"],
+                ng2_search_filter__WEBPACK_IMPORTED_MODULE_18__["Ng2SearchPipeModule"]],
             declarations: [_main_component__WEBPACK_IMPORTED_MODULE_3__["MainComponent"],
                 _pages_news_news_component__WEBPACK_IMPORTED_MODULE_6__["AppNewsComponent"],
                 _pages_runners_grid_runner_grid_runner_component__WEBPACK_IMPORTED_MODULE_7__["AppGridRunnerComponent"],
@@ -1369,7 +1382,7 @@ var AppGridRunnerRowComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row mt-4 ml-5 base-grid\">\r\n    <perfect-scrollbar fxFlex=\"auto\">\r\n        <ng-container *ngFor=\"let runner of runners; let itemIdx = index;trackBy: trackByFn\">\r\n            <app-grid-row [runner]=\"runner\"></app-grid-row>\r\n        </ng-container>\r\n    </perfect-scrollbar>\r\n</div>"
+module.exports = "<div class=\"row mt-4 ml-5 base-grid\">\r\n    <div class=\"row\">\r\n        <input class=\"form-control\" type=\"text\" name=\"search\" [(ngModel)]=\"searchText\" autocomplete=\"off\" placeholder=\"Szukaj zawodnika\">\r\n    </div>\r\n    <perfect-scrollbar fxFlex=\"auto\">\r\n        <ng-container *ngFor=\"let runner of runners | filter:searchText; let itemIdx = index;trackBy: trackByFn\">\r\n            <app-grid-row [runner]=\"runner\"></app-grid-row>\r\n        </ng-container>\r\n    </perfect-scrollbar>\r\n</div>"
 
 /***/ }),
 
