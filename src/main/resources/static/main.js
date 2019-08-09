@@ -958,6 +958,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
 /* harmony import */ var _runners_grid_exchange_data_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../runners/grid-exchange-data.service */ "./src/app/main/pages/runners/grid-exchange-data.service.ts");
 /* harmony import */ var src_app_core_permission_manager_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/core/permission-manager.service */ "./src/app/core/permission-manager.service.ts");
+/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
+
 
 
 
@@ -965,19 +967,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var GalleryViewComponent = /** @class */ (function () {
-    function GalleryViewComponent(galleryService, permissionManagerService) {
+    function GalleryViewComponent(galleryService, permissionManagerService, ngxSpinnerService) {
         var _this = this;
         this.galleryService = galleryService;
         this.permissionManagerService = permissionManagerService;
+        this.ngxSpinnerService = ngxSpinnerService;
         this.baseUrl = src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].serverUrl + "/api";
         this.persitUrl = src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].serverUrl + "/api/addimggalery";
         this.galleryData = [];
         this.refreshData = function () {
             var url = _this.baseUrl + "/gallery";
+            _this.ngxSpinnerService.show();
             _this.galleryService.getGallery(url)
                 .subscribe(function (data) {
                 _this.galleryData = data;
-            });
+                _this.ngxSpinnerService.hide();
+            }, function (fall) { return _this.ngxSpinnerService.hide(); });
         };
         this.onImageUploaded = function (data) {
             _this.refreshData();
@@ -994,6 +999,9 @@ var GalleryViewComponent = /** @class */ (function () {
     GalleryViewComponent.prototype.ngOnInit = function () {
         this.refreshData();
     };
+    GalleryViewComponent.prototype.ngOnDestroy = function () {
+        this.ngxSpinnerService.hide();
+    };
     GalleryViewComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-gallery-view',
@@ -1002,7 +1010,8 @@ var GalleryViewComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./gallery-view.component.scss */ "./src/app/main/pages/gallery/gallery-view.component.scss")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_gallery_service__WEBPACK_IMPORTED_MODULE_2__["GalleryService"],
-            src_app_core_permission_manager_service__WEBPACK_IMPORTED_MODULE_5__["PermissionManagerService"]])
+            src_app_core_permission_manager_service__WEBPACK_IMPORTED_MODULE_5__["PermissionManagerService"],
+            ngx_spinner__WEBPACK_IMPORTED_MODULE_6__["NgxSpinnerService"]])
     ], GalleryViewComponent);
     return GalleryViewComponent;
 }());
@@ -1154,7 +1163,7 @@ var AppNewsComponent = /** @class */ (function () {
             _this.newsService.getNews(_this.urlGetData).subscribe(function (data) {
                 _this.news = data;
                 _this.ngxSpinnerService.hide();
-            });
+            }, function (fall) { return _this.ngxSpinnerService.hide(); });
         };
         this.removeNews = function (id) {
             _this.newsService.removeNews(id).subscribe(function (data) {
@@ -1641,7 +1650,7 @@ var AppRunnersComponent = /** @class */ (function () {
             _this.runnerService.getRunners(url).subscribe(function (runnersData) {
                 _this.runners = runnersData;
                 _this.ngxSpinnerService.hide();
-            });
+            }, function (fall) { return _this.ngxSpinnerService.hide(); });
         };
         this.getRunnerDataFromModal = function (runner) {
             var url = _this.baseUrl + "/runner";
