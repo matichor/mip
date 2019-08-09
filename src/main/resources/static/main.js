@@ -99,6 +99,7 @@ var AppComponent = /** @class */ (function () {
         this.meta = meta;
         this.titleService = titleService;
         meta.addTags([
+            { name: 'google-site-verification', content: 'SKLN7-QjI0dHjDzA9j-XVsNSLz5iU-ZinF9Hca870BE' },
             { name: 'description', content: 'Biegi bieg bieganie kielce Mechanik i przyjaciele' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
             { name: 'robots', content: 'INDEX, FOLLOW' },
