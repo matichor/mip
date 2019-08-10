@@ -56,6 +56,70 @@ var AppRoutingModule = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/app.browser.module.ts":
+/*!***************************************!*\
+  !*** ./src/app/app.browser.module.ts ***!
+  \***************************************/
+/*! exports provided: AppBrowserModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppBrowserModule", function() { return AppBrowserModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _main_main_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./main/main.module */ "./src/app/main/main.module.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _core_request_interceptor__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./core/request.interceptor */ "./src/app/core/request.interceptor.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_common_locales_pl__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common/locales/pl */ "./node_modules/@angular/common/locales/pl.js");
+/* harmony import */ var _angular_common_locales_pl__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_angular_common_locales_pl__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _app_module__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./app.module */ "./src/app/app.module.ts");
+
+
+
+
+
+
+
+
+
+
+
+
+
+Object(_angular_common__WEBPACK_IMPORTED_MODULE_9__["registerLocaleData"])(_angular_common_locales_pl__WEBPACK_IMPORTED_MODULE_10___default.a);
+var AppBrowserModule = /** @class */ (function () {
+    function AppBrowserModule() {
+    }
+    AppBrowserModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
+            imports: [
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
+                _main_main_module__WEBPACK_IMPORTED_MODULE_6__["MainModule"],
+                _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__["NgbModule"].forRoot(),
+                _app_module__WEBPACK_IMPORTED_MODULE_11__["AppModule"],
+                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserTransferStateModule"]
+            ],
+            providers: [
+                { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HTTP_INTERCEPTORS"], useClass: _core_request_interceptor__WEBPACK_IMPORTED_MODULE_8__["Interceptor"], multi: true },
+                { provide: _angular_core__WEBPACK_IMPORTED_MODULE_2__["LOCALE_ID"], useValue: 'pl' },
+                _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__["NgbActiveModal"]
+            ],
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
+        })
+    ], AppBrowserModule);
+    return AppBrowserModule;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/app.component.html":
 /*!************************************!*\
   !*** ./src/app/app.component.html ***!
@@ -100,7 +164,7 @@ var AppComponent = /** @class */ (function () {
         this.titleService = titleService;
         meta.addTags([
             { name: 'google-site-verification', content: 'SKLN7-QjI0dHjDzA9j-XVsNSLz5iU-ZinF9Hca870BE' },
-            { name: 'description', content: 'Biegi bieg bieganie kielce Mechanik i przyjaciele' },
+            { name: 'description', content: 'Mechanik i Przyjaciele grupa biegowa. Poropagujemy, reklamujemy, krzewimy aktywność fizyczną' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
             { name: 'robots', content: 'INDEX, FOLLOW' },
             { name: 'author', content: 'overclocker' },
@@ -172,10 +236,12 @@ var AppModule = /** @class */ (function () {
                 _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]
             ],
             imports: [
-                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
+                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"].withServerTransition({ appId: 'serverApp' }),
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
                 _main_main_module__WEBPACK_IMPORTED_MODULE_6__["MainModule"],
-                _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__["NgbModule"].forRoot()
+                _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__["NgbModule"].forRoot(),
+                _angular_common__WEBPACK_IMPORTED_MODULE_9__["CommonModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClientModule"]
             ],
             providers: [
                 { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HTTP_INTERCEPTORS"], useClass: _core_request_interceptor__WEBPACK_IMPORTED_MODULE_8__["Interceptor"], multi: true },
@@ -928,7 +994,7 @@ var AppCooperationViewComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row mt-4 ml-4\" *ngIf=\"isAuthenticated()\">\r\n    <app-file-uploader [url]=\"persitUrl\" (notifyReqCompleted)=\"onImageUploaded($event)\"></app-file-uploader>\r\n</div>\r\n<div class=\"row mt-5\">\r\n    <app-image-galery [galleryImages]=\"galleryData\" (notifyReqCompleted)=\"deleteImage($event)\"></app-image-galery>\r\n</div>"
+module.exports = "<div class=\"row mt-4 ml-4\" *ngIf=\"isAuthenticated()\">\r\n    <app-file-uploader [url]=\"persitUrl\" (notifyReqCompleted)=\"onImageUploaded($event)\"></app-file-uploader>\r\n</div>\r\n<div class=\"row mt-5\">\r\n    <perfect-scrollbar fxFlex=\"auto\">\r\n        <app-image-galery [galleryImages]=\"galleryData\" (notifyReqCompleted)=\"deleteImage($event)\"></app-image-galery>\r\n    </perfect-scrollbar>\r\n</div>"
 
 /***/ }),
 
@@ -1291,7 +1357,7 @@ var GridExchangeDataService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<article class=\"row\">\r\n    <div class=\"row tabRowInfo\">\r\n        <div class=\"col-sm-2 col\">\r\n            <div class=\"inner-col\">\r\n                <app-image-panel [path]=\"path\" [width]='100' [height]='100' [binaryData]=\"runner.teammatePicture\"></app-image-panel>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"col-sm-8 col\">\r\n            <div class=\"inner-col\">\r\n                <div style=\"width: 50rem;\">\r\n                    <div class=\"card-body\">\r\n                        <p class=\"card-title text-justify\"><strong>\r\n                                <h4>{{runner.name}}</h4>\r\n                            </strong></p>\r\n                        <p class=\"card-title text-justify\"><strong>Kategoria: </strong> <span>{{runner.category}}</span></p>\r\n                        <p class=\"card-title text-justify\"><strong>Miejscowość: </strong> <span>{{runner.location}}</span></p>\r\n                        <p class=\"card-text text-justify\"><strong>BIO: </strong><span>{{runner.bio}}</span></p>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div class=\"col-sm-2 col\">\r\n            <div class=\"inner-col\">\r\n                <div class=\"mt-2\">\r\n                    <app-modal-statistic [runner]=\"runner\"></app-modal-statistic>\r\n                </div>\r\n                <div class=\"mt-2\" *ngIf=\"isAuthenticated()\">\r\n                    <app-file-runner-uploader (notifyPhotoCompleted)=\"onPhotoSelected($event)\"></app-file-runner-uploader>\r\n                </div>\r\n                <div class=\"mt-2\" *ngIf=\"isAuthenticated()\">\r\n                    <button class=\"btn btn-danger\" (click)=\"removeRunner()\">\r\n                        Usuń\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</article>\r\n<hr />\r\n<!-- <article class=\"row\">\r\n    <div class=\"row tabRowInfo\">\r\n        <div class=\"col-sm col\">\r\n            <div class=\"inner-col\">\r\n                <p> Test 2</p>\r\n            </div>\r\n        </div>\r\n        <div class=\"col-sm col\">\r\n            <div class=\"inner-col\">\r\n                Test1\r\n            </div>\r\n        </div>\r\n        <div class=\"col-sm col\">\r\n            <div class=\"inner-col\">\r\n                Autor\r\n            </div>\r\n        </div>\r\n        <div class=\"col-sm col\">\r\n            <div class=\"inner-col\">\r\n                Autor\r\n            </div>\r\n        </div>\r\n    </div>\r\n</article>\r\n<hr /> -->"
+module.exports = "<article class=\"row\">\r\n    <div class=\"row tabRowInfo\">\r\n        <div class=\"col-lg-2\">\r\n            <div class=\"inner-col\">\r\n                <app-image-panel [path]=\"path\" [width]='100' [height]='100' [binaryData]=\"runner.teammatePicture\"></app-image-panel>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"col-lg-8\">\r\n            <div class=\"inner-col\">\r\n                <div style=\"width: 50rem;\">\r\n                    <div class=\"card-body\">\r\n                        <p class=\"card-title text-justify\"><strong>\r\n                                <h4>{{runner.name}}</h4>\r\n                            </strong></p>\r\n                        <p class=\"card-title text-justify\"><strong>Kategoria: </strong> <span>{{runner.category}}</span></p>\r\n                        <p class=\"card-title text-justify\"><strong>Miejscowość: </strong> <span>{{runner.location}}</span></p>\r\n                        <p class=\"card-text text-justify\"><strong>BIO: </strong><span>{{runner.bio}}</span></p>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div class=\"col-lg-2\">\r\n            <div class=\"inner-col\">\r\n                <div class=\"mt-2 ml-sm-4 ml-4\">\r\n                    <app-modal-statistic [runner]=\"runner\"></app-modal-statistic>\r\n                </div>\r\n                <div class=\"mt-2\" *ngIf=\"isAuthenticated()\">\r\n                    <app-file-runner-uploader (notifyPhotoCompleted)=\"onPhotoSelected($event)\"></app-file-runner-uploader>\r\n                </div>\r\n                <div class=\"mt-2\" *ngIf=\"isAuthenticated()\">\r\n                    <button class=\"btn btn-danger\" (click)=\"removeRunner()\">\r\n                        Usuń\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</article>\r\n<hr />\r\n<!-- <article class=\"row\">\r\n    <div class=\"row tabRowInfo\">\r\n        <div class=\"col-sm col\">\r\n            <div class=\"inner-col\">\r\n                <p> Test 2</p>\r\n            </div>\r\n        </div>\r\n        <div class=\"col-sm col\">\r\n            <div class=\"inner-col\">\r\n                Test1\r\n            </div>\r\n        </div>\r\n        <div class=\"col-sm col\">\r\n            <div class=\"inner-col\">\r\n                Autor\r\n            </div>\r\n        </div>\r\n        <div class=\"col-sm col\">\r\n            <div class=\"inner-col\">\r\n                Autor\r\n            </div>\r\n        </div>\r\n    </div>\r\n</article>\r\n<hr /> -->"
 
 /***/ }),
 
@@ -1302,7 +1368,7 @@ module.exports = "<article class=\"row\">\r\n    <div class=\"row tabRowInfo\">\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".tabRowInfo {\n  height: 200px;\n  width: 100%; }\n  .tabRowInfo .col {\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-align: center;\n            align-items: center; }\n  .tabRowInfo .col .inner-col {\n      width: 100%;\n      text-align: center; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbWFpbi9wYWdlcy9ydW5uZXJzL2dyaWQtcnVubmVyL0M6XFxVc2Vyc1xcTWF0ZXVzelxcRG9jdW1lbnRzXFxlbmdpbmVlcmZlbGxhc1xcZW5naW5lZXItdWlcXHdlYi9zcmNcXGFwcFxcbWFpblxccGFnZXNcXHJ1bm5lcnNcXGdyaWQtcnVubmVyXFxncmlkLXJ1bm5lci1yb3cuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxjQUFhO0VBQ2IsWUFBVyxFQVNkO0VBWEQ7SUFJUSxxQkFBYTtJQUFiLGNBQWE7SUFDYiwwQkFBbUI7WUFBbkIsb0JBQW1CLEVBS3RCO0VBVkw7TUFPWSxZQUFXO01BQ1gsbUJBQWtCLEVBQ3JCIiwiZmlsZSI6InNyYy9hcHAvbWFpbi9wYWdlcy9ydW5uZXJzL2dyaWQtcnVubmVyL2dyaWQtcnVubmVyLXJvdy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi50YWJSb3dJbmZvIHtcclxuICAgIGhlaWdodDogMjAwcHg7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIC5jb2wge1xyXG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAgICAgICAuaW5uZXItY29sIHtcclxuICAgICAgICAgICAgd2lkdGg6IDEwMCU7XHJcbiAgICAgICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgICAgICB9XHJcbiAgICB9XHJcbn0iXX0= */"
+module.exports = ".tabRowInfo {\n  height: 100%;\n  width: 100%; }\n  .tabRowInfo .inner-col {\n    height: 250px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbWFpbi9wYWdlcy9ydW5uZXJzL2dyaWQtcnVubmVyL0M6XFxVc2Vyc1xcTWF0ZXVzelxcRG9jdW1lbnRzXFxlbmdpbmVlcmZlbGxhc1xcZW5naW5lZXItdWlcXHdlYi9zcmNcXGFwcFxcbWFpblxccGFnZXNcXHJ1bm5lcnNcXGdyaWQtcnVubmVyXFxncmlkLXJ1bm5lci1yb3cuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFFSSxhQUFZO0VBQ1osWUFBVyxFQWFkO0VBaEJEO0lBTVksY0FBYSxFQUNwQiIsImZpbGUiOiJzcmMvYXBwL21haW4vcGFnZXMvcnVubmVycy9ncmlkLXJ1bm5lci9ncmlkLXJ1bm5lci1yb3cuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudGFiUm93SW5mbyB7XHJcbiAgICAvLyBoZWlnaHQ6IDIwMHB4O1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcblxyXG4gICAgLmlubmVyLWNvbCB7XHJcbiAgICAgICAgICAgIGhlaWdodDogMjUwcHg7XHJcbiAgICB9XHJcbiAgICAvLyAuY29sIHtcclxuICAgIC8vICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgLy8gICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgICAvLyAgICAgLmlubmVyLWNvbCB7XHJcbiAgICAvLyAgICAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgLy8gICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICAvLyAgICAgfVxyXG4gICAgLy8gfVxyXG59Il19 */"
 
 /***/ }),
 
@@ -1392,7 +1458,7 @@ var AppGridRunnerRowComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row mt-4 ml-5 base-grid\">\r\n    <div class=\"row\">\r\n        <input class=\"form-control\" type=\"text\" name=\"search\" [(ngModel)]=\"searchText\" autocomplete=\"off\" placeholder=\"Szukaj zawodnika\">\r\n    </div>\r\n    <perfect-scrollbar fxFlex=\"auto\">\r\n        <ng-container *ngFor=\"let runner of runners | filter:searchText; let itemIdx = index;trackBy: trackByFn\">\r\n            <app-grid-row [runner]=\"runner\"></app-grid-row>\r\n        </ng-container>\r\n    </perfect-scrollbar>\r\n</div>"
+module.exports = "<div class=\"row mt-4 ml-5 base-grid\">\r\n    <div class=\"row mb-4\">\r\n        <input class=\"form-control\" type=\"text\" name=\"search\" [(ngModel)]=\"searchText\" autocomplete=\"off\" placeholder=\"Szukaj zawodnika\">\r\n    </div>\r\n    <perfect-scrollbar fxFlex=\"auto\">\r\n        <ng-container *ngFor=\"let runner of runners | filter:searchText; let itemIdx = index;trackBy: trackByFn\">\r\n            <app-grid-row [runner]=\"runner\"></app-grid-row>\r\n        </ng-container>\r\n    </perfect-scrollbar>\r\n</div>"
 
 /***/ }),
 
@@ -2168,7 +2234,7 @@ var AppFileUploaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row ml-5 base-gallery\">\r\n    <ngx-gallery [options]=\"galleryOptions\" [images]=\"galleryImages\"></ngx-gallery>\r\n</div>"
+module.exports = "<div class=\"row ml-lg-5 pl-4 pr-4\">\r\n    <ngx-gallery [options]=\"galleryOptions\" [images]=\"galleryImages\"></ngx-gallery>\r\n</div>"
 
 /***/ }),
 
@@ -2695,7 +2761,7 @@ var MenuComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row w-100\">\r\n    <nav class=\"navbar navbar-light light-blue lighten-4\">\r\n        <button class=\"navbar-toggler toggler-example\" type=\"button\" (click)=\"isCollapsed = !isCollapsed\"\r\n            [attr.aria-expanded]=\"!isCollapsed\" aria-controls=\"navbarSupportedContent1\" aria-label=\"Toggle navigation\">\r\n            <span class=\"dark-blue-text\"><i class=\"fa fa-bars fa-1x\"></i></span>\r\n        </button>\r\n        <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent1\" [ngbCollapse]=\"isCollapsed\">\r\n\r\n            <!-- Links -->\r\n            <ul class=\"navbar-nav mr-auto\">\r\n                <li class=\"nav-item active\">\r\n                    <a class=\"nav-link\" routerLink=\"/news\">\r\n                        <fa-icon [icon]=\"['fas', 'newspaper']\" size=\"lg\" class=\"common-fontawesome-icon-color\"></fa-icon>\r\n                        <span class=\"menu-item-title-color ml-2\">Aktualności</span>\r\n                    </a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link\" routerLink=\"/runners\" routerLinkActive=\"active\">\r\n                        <fa-icon [icon]=\"['fas', 'running']\" size=\"lg\" class=\"common-fontawesome-icon-color\"></fa-icon>\r\n                        <span class=\"menu-item-title-color ml-2\">Nasi biegacze</span>\r\n                    </a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link\" routerLink=\"/calendar\" routerLinkActive=\"active\">\r\n                        <fa-icon [icon]=\"['fas', 'calendar-alt']\" size=\"lg\" class=\"common-fontawesome-icon-color\"></fa-icon>\r\n                        <span class=\"menu-item-title-color ml-2\">Kalendarz biegów</span>\r\n                    </a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link\" routerLink=\"/gallery\" routerLinkActive=\"active\">\r\n                        <fa-icon [icon]=\"['fas', 'images']\" size=\"lg\" class=\"common-fontawesome-icon-color\"></fa-icon>\r\n                        <span class=\"menu-item-title-color ml-2\">Galeria imprez</span>\r\n                    </a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link\" routerLink=\"/about-us\" routerLinkActive=\"active\">\r\n                        <fa-icon [icon]=\"['fas', 'user-friends']\" size=\"lg\" class=\"common-fontawesome-icon-color\"></fa-icon>\r\n                        <span class=\"menu-item-title-color ml-2\">O nas</span>\r\n                    </a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link\" routerLink=\"/contact\" routerLinkActive=\"active\">\r\n                        <fa-icon [icon]=\"['fas', 'id-card']\" size=\"lg\" class=\"common-fontawesome-icon-color\"></fa-icon>\r\n                        <span class=\"menu-item-title-color ml-2\">Kontakt</span>\r\n                    </a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link\" routerLink=\"/synergy\" routerLinkActive=\"active\">\r\n                        <fa-icon [icon]=\"['fas', 'people-carry']\" size=\"lg\" class=\"common-fontawesome-icon-color\"></fa-icon>\r\n                        <span class=\"menu-item-title-color ml-2\">Synergia</span>\r\n                    </a>\r\n                </li>\r\n            </ul>\r\n            <!-- Links -->\r\n\r\n        </div>\r\n        <!-- Collapsible content -->\r\n\r\n    </nav>\r\n</div>"
+module.exports = "<div class=\"row logo-set\">\r\n    <app-image-panel [path]=\"'../../../assets/image/logoEnginner.png'\" [width]='70' [height]='70'></app-image-panel>\r\n</div>\r\n<div class=\"row w-100 mt-5\">\r\n    <nav class=\"navbar navbar-light light-blue lighten-4 w-100 ml-4\">\r\n        <button class=\"navbar-toggler toggler-example\" type=\"button\" (click)=\"isCollapsed = !isCollapsed\"\r\n            [attr.aria-expanded]=\"!isCollapsed\" aria-controls=\"navbarSupportedContent1\" aria-label=\"Toggle navigation\">\r\n            <span class=\"dark-blue-text\"><i class=\"fa fa-bars fa-1x\"></i></span>\r\n        </button>\r\n        <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent1\" [ngbCollapse]=\"isCollapsed\">\r\n\r\n            <!-- Links -->\r\n            <ul class=\"navbar-nav mr-auto nav-list-head\">\r\n                <li class=\"nav-item active\">\r\n                    <a class=\"nav-link\" routerLink=\"/news\">\r\n                        <fa-icon [icon]=\"['fas', 'newspaper']\" size=\"lg\" class=\"common-fontawesome-icon-color\"></fa-icon>\r\n                        <span class=\"menu-item-title-color ml-2\">Aktualności</span>\r\n                    </a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link\" routerLink=\"/runners\" routerLinkActive=\"active\">\r\n                        <fa-icon [icon]=\"['fas', 'running']\" size=\"lg\" class=\"common-fontawesome-icon-color\"></fa-icon>\r\n                        <span class=\"menu-item-title-color ml-2\">Nasi biegacze</span>\r\n                    </a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link\" routerLink=\"/calendar\" routerLinkActive=\"active\">\r\n                        <fa-icon [icon]=\"['fas', 'calendar-alt']\" size=\"lg\" class=\"common-fontawesome-icon-color\"></fa-icon>\r\n                        <span class=\"menu-item-title-color ml-2\">Kalendarz biegów</span>\r\n                    </a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link\" routerLink=\"/gallery\" routerLinkActive=\"active\">\r\n                        <fa-icon [icon]=\"['fas', 'images']\" size=\"lg\" class=\"common-fontawesome-icon-color\"></fa-icon>\r\n                        <span class=\"menu-item-title-color ml-2\">Galeria imprez</span>\r\n                    </a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link\" routerLink=\"/about-us\" routerLinkActive=\"active\">\r\n                        <fa-icon [icon]=\"['fas', 'user-friends']\" size=\"lg\" class=\"common-fontawesome-icon-color\"></fa-icon>\r\n                        <span class=\"menu-item-title-color ml-2\">O nas</span>\r\n                    </a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link\" routerLink=\"/contact\" routerLinkActive=\"active\">\r\n                        <fa-icon [icon]=\"['fas', 'id-card']\" size=\"lg\" class=\"common-fontawesome-icon-color\"></fa-icon>\r\n                        <span class=\"menu-item-title-color ml-2\">Kontakt</span>\r\n                    </a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link\" routerLink=\"/synergy\" routerLinkActive=\"active\">\r\n                        <fa-icon [icon]=\"['fas', 'people-carry']\" size=\"lg\" class=\"common-fontawesome-icon-color\"></fa-icon>\r\n                        <span class=\"menu-item-title-color ml-2\">Synergia</span>\r\n                    </a>\r\n                </li>\r\n            </ul>\r\n            <!-- Links -->\r\n\r\n        </div>\r\n        <!-- Collapsible content -->\r\n\r\n    </nav>\r\n</div>"
 
 /***/ }),
 
@@ -2706,7 +2772,7 @@ module.exports = "<div class=\"row w-100\">\r\n    <nav class=\"navbar navbar-li
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".fa-1x {\n  font-size: 1.5rem; }\n\n.navbar-toggler.toggler-example {\n  cursor: pointer; }\n\n.dark-blue-text {\n  color: #0A38F5; }\n\n.dark-pink-text {\n  color: #AC003A; }\n\n.dark-amber-text {\n  color: #ff6f00; }\n\n.dark-teal-text {\n  color: #004d40; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2hhcmVkL21vYmlsZS1tZW51L0M6XFxVc2Vyc1xcTWF0ZXVzelxcRG9jdW1lbnRzXFxlbmdpbmVlcmZlbGxhc1xcZW5naW5lZXItdWlcXHdlYi9zcmNcXGFwcFxcc2hhcmVkXFxtb2JpbGUtbWVudVxcbW9iaWxlLW1lbnUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBaUIsRUFDaEI7O0FBQ0Q7RUFDQSxnQkFBZSxFQUNkOztBQUNEO0VBQ0EsZUFBYyxFQUNiOztBQUNEO0VBQ0EsZUFBYyxFQUNiOztBQUNEO0VBQ0EsZUFBYyxFQUNiOztBQUNEO0VBQ0EsZUFBYyxFQUNiIiwiZmlsZSI6InNyYy9hcHAvc2hhcmVkL21vYmlsZS1tZW51L21vYmlsZS1tZW51LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmZhLTF4IHtcclxuICAgIGZvbnQtc2l6ZTogMS41cmVtO1xyXG4gICAgfVxyXG4gICAgLm5hdmJhci10b2dnbGVyLnRvZ2dsZXItZXhhbXBsZSB7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICB9XHJcbiAgICAuZGFyay1ibHVlLXRleHQge1xyXG4gICAgY29sb3I6ICMwQTM4RjU7XHJcbiAgICB9XHJcbiAgICAuZGFyay1waW5rLXRleHQge1xyXG4gICAgY29sb3I6ICNBQzAwM0E7XHJcbiAgICB9XHJcbiAgICAuZGFyay1hbWJlci10ZXh0IHtcclxuICAgIGNvbG9yOiAjZmY2ZjAwO1xyXG4gICAgfVxyXG4gICAgLmRhcmstdGVhbC10ZXh0IHtcclxuICAgIGNvbG9yOiAjMDA0ZDQwO1xyXG4gICAgfSJdfQ== */"
+module.exports = ".logo-set {\n  height: 200px;\n  margin-left: 25%; }\n\n.nav-list-head {\n  -webkit-box-align: center;\n          align-items: center; }\n\n.fa-1x {\n  font-size: 1.5rem; }\n\n.navbar-toggler.toggler-example {\n  cursor: pointer; }\n\n.dark-blue-text {\n  color: #0A38F5; }\n\n.dark-pink-text {\n  color: #AC003A; }\n\n.dark-amber-text {\n  color: #ff6f00; }\n\n.dark-teal-text {\n  color: #004d40; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2hhcmVkL21vYmlsZS1tZW51L0M6XFxVc2Vyc1xcTWF0ZXVzelxcRG9jdW1lbnRzXFxlbmdpbmVlcmZlbGxhc1xcZW5naW5lZXItdWlcXHdlYi9zcmNcXGFwcFxcc2hhcmVkXFxtb2JpbGUtbWVudVxcbW9iaWxlLW1lbnUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxjQUFhO0VBQ2IsaUJBQWdCLEVBQ25COztBQUNEO0VBQ0ksMEJBQW1CO1VBQW5CLG9CQUFtQixFQUN0Qjs7QUFFRDtFQUNJLGtCQUFpQixFQUNoQjs7QUFDRDtFQUNBLGdCQUFlLEVBQ2Q7O0FBQ0Q7RUFDQSxlQUFjLEVBQ2I7O0FBQ0Q7RUFDQSxlQUFjLEVBQ2I7O0FBQ0Q7RUFDQSxlQUFjLEVBQ2I7O0FBQ0Q7RUFDQSxlQUFjLEVBQ2IiLCJmaWxlIjoic3JjL2FwcC9zaGFyZWQvbW9iaWxlLW1lbnUvbW9iaWxlLW1lbnUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubG9nby1zZXQge1xyXG4gICAgaGVpZ2h0OiAyMDBweDtcclxuICAgIG1hcmdpbi1sZWZ0OiAyNSU7XHJcbn1cclxuLm5hdi1saXN0LWhlYWQge1xyXG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxufVxyXG5cclxuLmZhLTF4IHtcclxuICAgIGZvbnQtc2l6ZTogMS41cmVtO1xyXG4gICAgfVxyXG4gICAgLm5hdmJhci10b2dnbGVyLnRvZ2dsZXItZXhhbXBsZSB7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICB9XHJcbiAgICAuZGFyay1ibHVlLXRleHQge1xyXG4gICAgY29sb3I6ICMwQTM4RjU7XHJcbiAgICB9XHJcbiAgICAuZGFyay1waW5rLXRleHQge1xyXG4gICAgY29sb3I6ICNBQzAwM0E7XHJcbiAgICB9XHJcbiAgICAuZGFyay1hbWJlci10ZXh0IHtcclxuICAgIGNvbG9yOiAjZmY2ZjAwO1xyXG4gICAgfVxyXG4gICAgLmRhcmstdGVhbC10ZXh0IHtcclxuICAgIGNvbG9yOiAjMDA0ZDQwO1xyXG4gICAgfSJdfQ== */"
 
 /***/ }),
 
@@ -3212,7 +3278,7 @@ var AppModalStatisticComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<article class=\"entry-block mt-2 w-100\">\r\n    <header>\r\n        <h2>{{news.subject}}</h2>\r\n        <div class=\"entry-meta\">\r\n            <fa-icon [icon]=\"['fas', 'calendar-alt']\" size=\"lg\" class=\"common-fontawesome-icon-color\"></fa-icon>\r\n            <span>{{news.created}}</span>\r\n        </div>\r\n    </header>\r\n    <div class=\"row mb-5\">\r\n        <div class=\"col-4\">\r\n            <app-image-panel [path]=\"path\" [width]='100' [height]='100' [binaryData]=\"news.teammatePicture\"></app-image-panel>\r\n        </div>\r\n        <div class=\"col-8\" [style.padding-left.px]=\"50\">\r\n            <span>{{news.contents}}</span>\r\n        </div>\r\n    </div>\r\n</article>\r\n<hr>"
+module.exports = "<article class=\"entry-block mt-2 w-100\">\r\n    <header>\r\n        <h2>{{news.subject}}</h2>\r\n        <div class=\"entry-meta\">\r\n            <fa-icon [icon]=\"['fas', 'calendar-alt']\" size=\"lg\" class=\"common-fontawesome-icon-color\"></fa-icon>\r\n            <span>{{news.created}}</span>\r\n        </div>\r\n    </header>\r\n    <div class=\"row mb-5\">\r\n        <div class=\"col-lg-4\">\r\n            <app-image-panel [path]=\"path\" [width]='100' [height]='100' [binaryData]=\"news.teammatePicture\"></app-image-panel>\r\n        </div>\r\n        <div class=\"col-lg-8 pl-lg-5 mt-sm-2\">\r\n            <span>{{news.contents}}</span>\r\n        </div>\r\n    </div>\r\n</article>\r\n<hr>"
 
 /***/ }),
 
@@ -3586,17 +3652,19 @@ var environment = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js");
-/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _app_app_browser_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app/app.browser.module */ "./src/app/app.browser.module.ts");
 
 
 
 
-if (_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].production) {
+if (_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].production) {
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["enableProdMode"])();
 }
-Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_2__["AppModule"])
-    .catch(function (err) { return console.error(err); });
+document.addEventListener('DOMContentLoaded', function () {
+    Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformBrowserDynamic"])().bootstrapModule(_app_app_browser_module__WEBPACK_IMPORTED_MODULE_3__["AppBrowserModule"])
+        .catch(function (err) { return console.error(err); });
+});
 
 
 /***/ }),
