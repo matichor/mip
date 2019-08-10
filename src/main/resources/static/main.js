@@ -586,9 +586,6 @@ var MainComponent = /** @class */ (function () {
     MainComponent.prototype.ngOnInit = function () {
         this.desktopVisibility = !(window.screen.width < 961);
         this.mobileVisibility = window.screen.width < 961;
-        if (this.mobileVisibility) {
-            alert('Aplikacja nie obsługuje jeszcze urządzeń mobilnych');
-        }
     };
     MainComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
