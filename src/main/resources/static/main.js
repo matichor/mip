@@ -175,7 +175,7 @@ var AppComponent = /** @class */ (function () {
             { property: 'og:type', content: 'website' },
             { charset: 'UTF-8' }
         ]);
-        titleService.setTitle('Grupa biegowa Mechanik i Przyjaciele');
+        titleService.setTitle('Mechanik i Przyjaciele');
     }
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
