@@ -1,8 +1,0 @@
-{
-  "realm": "master",
-  "auth-server-url": "https://ontax.onwelo.com/auth/",
-  "ssl-required": "external",
-  "resource": "jpk-dev",
-  "public-client": true,
-  "use-resource-role-mappings": true
-}
